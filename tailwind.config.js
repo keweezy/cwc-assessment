@@ -15,6 +15,9 @@ module.exports = {
         "icon-bg": "rgb(186, 189, 209)",
         "light-green": "rgb(117, 214, 209)",
         "search-input": "rgba(0, 0, 0, 0.54)",
+        "semi-dark-gray": "rgba(0,0,0,.12)",
+        "light-pink": "rgb(247, 217, 242)",
+        "semi-dark-pink": "rgb(225 185 218)",
       },
       fontFamily: {
         body: ["Poppins, sans-serif"],
@@ -30,9 +33,31 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        fadeInLeft: {
+          "0%": {
+            opacity: "0.2",
+            transform: "translateX(-700px)", // Move from left to right
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)", // Move to initial position
+          },
+        },
+        fadeOutRight: {
+          "0%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+          "100%": {
+            opacity: "0,2",
+            transform: "translateX(700px)",
+          },
+        },
       },
       animation: {
-        "fade-in": "fadeIn 2s ease-out",
+        "fade-in": "fadeIn 1s ease-out",
+        fadeInLeft: "fadeInLeft 0.5s ease-in",
+        fadeOutRight: "fadeOutRight 0.5s ease-out",
       },
     },
   },

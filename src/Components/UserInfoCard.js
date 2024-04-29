@@ -2,7 +2,7 @@ import React from "react";
 import { mdiEmailOutline, mdiPhoneInTalkOutline, mdiArrowRight } from "@mdi/js";
 import Icon from "@mdi/react";
 
-const UserInfoCard = ({ user, showCountry }) => {
+const UserInfoCard = ({ user, showCountry, viewUser }) => {
   return (
     <div className="p-4 md:p-6 rounded-lg md:flex bg-white shadow-info-card mt-10 w-full md:gap-x-4 animate-fade-in">
       <div className="h-[100px] w-[100px] flex items-center justify-center bg-gray-200 rounded-full border-4 border-light-green mx-auto">
@@ -29,7 +29,10 @@ const UserInfoCard = ({ user, showCountry }) => {
             <p className="text-xs font-normal opacity-60">{user?.phone}</p>
           </div>
 
-          <button className="rounded-2xl cursor-pointer p-3 px-5 bg-light-green shadow-arrow-button w-fit mx-auto md:mx-0">
+          <button
+            className="rounded-2xl cursor-pointer p-3 px-5 bg-light-green shadow-arrow-button w-fit mx-auto md:mx-0 hover:bg-male-users-bg"
+            onClick={() => viewUser(user)}
+          >
             <Icon
               path={mdiArrowRight}
               className="mx-auto"
