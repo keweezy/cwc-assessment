@@ -55,8 +55,8 @@ const RightColumn = ({
       className={`right-column text-almost-black text-center p-8 pb-10 rounded-2xl w-full bg-almost-white mt-32 overflow-hidden`}
     >
       <div className={`${animation}`}>
-        <h1 className="font-extrabold text-[22px] mt-10 md:text-left">
-          All Users
+        <h1 className="font-bold text-[22px] mt-10 md:text-left">
+          {viewUserInfo.show ? "User List" : "All Users"}
         </h1>
         <p className="text-xs text-center mb-3 md:text-left">Filter by</p>
 
@@ -123,7 +123,7 @@ const RightColumn = ({
         {/* Download button and Prev and next button */}
         <div className="flex justify-between mt-14 items-center">
           <button
-            className="rounded-3xl bg-female-users-bg p-3 px-5 text-white flex hover:opacity-80"
+            className="rounded-3xl bg-female-users-bg p-3 px-5 text-white flex hover:opacity-80 disabled:opacity-80 disabled:cursor-not-allowed"
             onClick={() => downloadUsersDataAsCSV(users)}
             disabled={users.length === 0 || viewUserInfo?.show}
           >
@@ -137,14 +137,14 @@ const RightColumn = ({
           </button>
           <div className="flex gap-x-3">
             <button
-              className="rounded-lg bg-icon-bg p-2 px-4 text-white"
+              className="rounded-lg bg-icon-bg p-2 px-4 text-white disabled:opacity-80 disabled:cursor-not-allowed"
               onClick={() => fetchPrevPage()}
               disabled={page === 1 || viewUserInfo?.show}
             >
               <Icon path={mdiChevronLeft} size={1} color="white" />
             </button>
             <button
-              className="rounded-lg bg-black px-4 text-white"
+              className="rounded-lg bg-black px-4 text-white disabled:opacity-80 disabled:cursor-not-allowed"
               onClick={() => fetchNextPage()}
               disabled={users.length === 0 || viewUserInfo?.show}
             >
